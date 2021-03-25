@@ -1,5 +1,7 @@
 import { RepositoryItem } from "./RepositoryItem";
 
+import '../styles/repositories.scss';
+
 const repository = {
   name: "Xcard",
   description: "Amazing credit card for everyone",
@@ -8,7 +10,7 @@ const repository = {
 
 export function RepositoryList() {
   return (
-    <section>
+    <section className="repository-list">
       <ul>
         <RepositoryItem repository={repository} />
         <RepositoryItem />
