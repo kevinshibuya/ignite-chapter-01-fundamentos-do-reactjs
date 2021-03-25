@@ -3,14 +3,6 @@ import { RepositoryItem } from "./RepositoryItem";
 
 import '../styles/repositories.scss';
 
-// https://api.github.com/users/kevinshibuya/repos
-
-const repository = {
-  name: "Xcard",
-  description: "Amazing credit card for everyone",
-  link: "http://localhost:8080/"
-}
-
 export function RepositoryList() {
   const [repositories, setRepositories] = useState([]);
 
@@ -23,9 +15,9 @@ export function RepositoryList() {
   return (
     <section className="repository-list">
       <ul>
-        <RepositoryItem repository={repository} />
-        <RepositoryItem />
-        <RepositoryItem />
+        {repositories.map(repository => {
+          return <RepositoryItem key={repository.name} repository={repository} />
+        })}
       </ul>
     </section>
   );
